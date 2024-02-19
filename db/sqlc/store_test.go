@@ -54,7 +54,7 @@ func TestTransferTx(t *testing.T) {
 		_, err = store.GetTransfers(context.Background(), transfer.ID)
 		require.NoError(t, err)
 
-		// check entries
+		//* check entries
 		fromEntry := result.FromEntry
 		require.NotEmpty(t, fromEntry)
 		require.Equal(t, account1.ID, fromEntry.AccountID)
@@ -65,7 +65,7 @@ func TestTransferTx(t *testing.T) {
 		_, err = store.GetEntries(context.Background(), fromEntry.ID)
 		require.NoError(t, err)
 
-		// check entries
+		//* check entries
 		toEntry := result.ToEntry
 		require.NotEmpty(t, toEntry)
 		require.Equal(t, account2.ID, toEntry.AccountID)
